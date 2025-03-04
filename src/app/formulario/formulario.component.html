@@ -1,18 +1,20 @@
-<form (ngSubmit)="onSubmit()" #formulario="ngForm">
-    <div>
-      <label for="tipoDocumento">Tipo de Documento:</label>
-      <input type="number" id="tipoDocumento" required [(ngModel)]="tipoDocumento" name="tipoDocumento">
-    </div>
-    
-    <div>
-      <label for="numeroDocumento">Número de Documento:</label>
-      <input type="text" id="numeroDocumento" required [(ngModel)]="numeroDocumento" name="numeroDocumento">
-    </div>
-    
-    <div>
-      <label for="usuarioDominio">Usuario Dominio:</label>
-      <input type="text" id="usuarioDominio" required [(ngModel)]="usuarioDominio" name="usuarioDominio">
-    </div>
-    
-    <button type="submit" [disabled]="!formulario.form.valid">Enviar</button>
-  </form>
+<form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+  <div>
+    <label for="tipoDocumento">Tipo de Documento:</label>
+    <input type="number" id="tipoDocumento" name="tipoDocumento" >
+  </div>
+  
+  <div>
+    <label for="numeroDocumento">Número de Documento:</label>
+    <input type="text" id="numeroDocumento" name="numeroDocumento" >
+  </div>
+  
+  <div>
+    <label for="usuarioDominio">Usuario Dominio:</label>
+    <input type="text" id="usuarioDominio" name="usuarioDominio">
+  </div>
+  
+  <button type="submit">Enviar</button>
+</form>
+
+
